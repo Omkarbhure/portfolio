@@ -28,14 +28,14 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center bg-grid">
+      <section className="relative min-h-[80vh] flex items-center bg-grid px-4 sm:px-6">
         <div className="container">
           <div className="max-w-3xl opacity-0 animate-fade-in-up">
             {/* Code-style label */}
             <CodeLabel className="mb-6">Software Developer</CodeLabel>
 
             {/* Headline with typing cursor */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
               Hi, I'm Omkar.
               <br />
               <span className="text-muted-foreground">I build reliable systems that scale.</span>
@@ -43,7 +43,7 @@ export default function Home() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed opacity-0 animate-fade-in-up stagger-1">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-xl leading-relaxed opacity-0 animate-fade-in-up stagger-1">
               A developer focused on building software that scales, performs, and lasts.
               I enjoy designing and developing reliable digital products that solve complex
               real-world problems and deliver meaningful impact.
@@ -69,7 +69,7 @@ export default function Home() {
             <CodeDivider label="Featured Work" />
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2">
             {featuredProjects.map((project, index) => (
               <div 
                 key={project.name} 

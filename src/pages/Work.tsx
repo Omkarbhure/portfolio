@@ -22,14 +22,14 @@ const projects = [
 export default function Work() {
   return (
     <Layout>
-      <section className="py-20">
-        <div className="container">
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container px-4 sm:px-6">
           {/* Page Header */}
           <div className="max-w-2xl mb-12 opacity-0 animate-fade-in-up">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Work
             </h1>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               A selection of projects showcasing systems engineering, product development, 
               and technical problem-solving. Each project represents real challenges solved 
               with measurable impact.
@@ -41,7 +41,7 @@ export default function Work() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid gap-8">
+          <div className="grid gap-4 sm:gap-6 lg:gap-8">
             {projects.map((project, index) => (
               <div 
                 key={project.name}

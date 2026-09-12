@@ -8,11 +8,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function Styleguide() {
   return (
     <Layout>
-      <section className="py-20">
-        <div className="container">
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container px-4 sm:px-6">
           {/* Page Header */}
           <div className="max-w-2xl mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Styleguide
             </h1>
             <p className="text-muted-foreground leading-relaxed">
@@ -23,7 +23,7 @@ export default function Styleguide() {
 
           {/* Colors */}
           <CodeDivider label="Colors" />
-          <div className="grid gap-4 md:grid-cols-4 mb-16">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-16">
             <div className="space-y-2">
               <div className="h-20 rounded-lg bg-background border border-border" />
               <p className="font-mono text-xs text-muted-foreground">--background</p>
@@ -88,7 +88,7 @@ export default function Styleguide() {
 
           {/* Cards */}
           <CodeDivider label="Cards" />
-          <div className="grid gap-4 md:grid-cols-2 mb-16">
+          <div className="grid gap-4 sm:grid-cols-2 mb-16">
             <Card>
               <CardHeader>
                 <CardTitle>Card Title</CardTitle>

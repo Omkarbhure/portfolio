@@ -14,6 +14,7 @@ const projectsData: Record<string, {
   challenges: string[];
   features: string[];
   githubUrl: string;
+  liveDemoUrl?: string;
 }> = {
   "cinebook-online-movie-ticket-booking-platform": {
     name: "CineBook — Online Movie Ticket Booking Platform",
@@ -35,7 +36,8 @@ const projectsData: Record<string, {
       "Background cron scheduler for automated 7-day showtime generation",
       "Administrative dashboard for movies, revenue tracking, bookings, and ticket verification"
     ],
-    githubUrl: "https://github.com/Omkarbhure/Cinebook"
+    githubUrl: "https://github.com/Omkarbhure/Cinebook",
+    liveDemoUrl: "https://cinebook-sigma.vercel.app/"
   },
   "tripnest-travel-planning-and-trip-management-platform": {
     name: "TripNest — Travel Planning & Trip Management Platform",
@@ -57,7 +59,8 @@ const projectsData: Record<string, {
       "Live weather integration (temperature, humidity, wind, forecast) via OpenWeather on destination pages",
       "Day-by-day itinerary timeline with type-specific activity categorization"
     ],
-    githubUrl: "https://github.com/Omkarbhure/tripnest"
+    githubUrl: "https://github.com/Omkarbhure/tripnest",
+    liveDemoUrl: "https://tripnest-frontend-three.vercel.app"
   }
 };
 
@@ -88,8 +91,8 @@ export default function ProjectDetail() {
 
   return (
     <Layout>
-      <section className="py-20">
-        <div className="container max-w-4xl">
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container max-w-4xl px-4 sm:px-6">
           {/* Back Link */}
           <Link 
             to="/work" 
@@ -101,10 +104,10 @@ export default function ProjectDetail() {
 
           {/* Project Header */}
           <div className="mb-12 opacity-0 animate-fade-in-up stagger-1">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               {project.name}
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
               {project.fullDescription}
             </p>
             
@@ -156,10 +159,10 @@ export default function ProjectDetail() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4 pt-8 border-t border-border opacity-0 animate-fade-in-up stagger-4">
+          <div className="flex flex-wrap gap-3 sm:gap-4 pt-8 border-t border-border opacity-0 animate-fade-in-up stagger-4">
             <Button
               variant="outline"
-              className="font-mono"
+              className="font-mono min-h-[44px]"
               asChild
             >
               <a
@@ -171,10 +174,27 @@ export default function ProjectDetail() {
                 View Code
               </a>
             </Button>
-            <Button variant="outline" className="font-mono" disabled>
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Live Demo
-            </Button>
+            {project.liveDemoUrl ? (
+              <Button
+                variant="outline"
+                className="font-mono min-h-[44px]"
+                asChild
+              >
+                <a
+                  href={project.liveDemoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Live Demo
+                </a>
+              </Button>
+            ) : (
+              <Button variant="outline" className="font-mono" disabled>
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Live Demo
+              </Button>
+            )}
           </div>
         </div>
       </section>

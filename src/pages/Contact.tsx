@@ -36,20 +36,20 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="py-20">
-        <div className="container">
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container px-4 sm:px-6">
           {/* Page Header */}
           <div className="max-w-2xl mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Contact
             </h1>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Have a project in mind or want to discuss opportunities? 
               I'm always open to interesting conversations and collaborations.
             </p>
           </div>
 
-          <div className="grid gap-16 lg:grid-cols-2">
+          <div className="grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
             {/* Contact Form */}
             <div>
               <CodeDivider label="Send a Message" />
@@ -96,7 +96,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <Button type="submit" disabled={isSubmitting} className="font-mono">
+                <Button type="submit" disabled={isSubmitting} className="font-mono min-h-[44px] w-full sm:w-auto">
                   {isSubmitting ? (
                     "Sending..."
                   ) : (
@@ -120,9 +120,9 @@ export default function Contact() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
+                    className="flex min-h-[44px] items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
                   >
-                    <div className="flex items-center justify-center w-12 h-12 bg-secondary rounded-lg group-hover:bg-primary/10 transition-colors">
+                    <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-secondary rounded-lg group-hover:bg-primary/10 transition-colors">
                       <link.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                     </div>
                     <div>

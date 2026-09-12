@@ -14,16 +14,16 @@ interface ProjectCardProps {
 
 export function ProjectCard({ name, description, stack, impact, slug, className }: ProjectCardProps) {
   return (
-    <Link to={`/work/${slug}`}>
+    <Link to={`/work/${slug}`} className="block h-full">
       <article
         className={cn(
-          "group p-6 bg-card border border-border rounded-lg transition-all hover:border-primary/50 hover:bg-card/80 cursor-pointer",
+          "group h-full w-full p-4 sm:p-5 lg:p-6 bg-card border border-border rounded-lg transition-all hover:border-primary/50 hover:bg-card/80 cursor-pointer",
           className
         )}
       >
         {/* Project Name */}
         <div className="flex items-center justify-between mb-2">
-          <h3 className="font-mono text-lg font-medium text-foreground group-hover:text-primary transition-colors">
+          <h3 className="font-mono text-base sm:text-lg font-medium text-foreground group-hover:text-primary transition-colors">
             {name}
           </h3>
           <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />

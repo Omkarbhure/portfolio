@@ -23,22 +23,13 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link 
           to="/" 
-          className="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
+          className="flex min-w-0 items-center gap-2 text-primary hover:opacity-80 transition-opacity"
         >
-          <svg
-            viewBox="0 0 140 68"
-            className="h-8 w-10"
-            aria-label="DevOmkar logo"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M36 9L8 34L36 59H46L18 34L46 9H36ZM104 9H94L122 34L94 59H104L132 34L104 9ZM58 9H72V59H58V9Z" />
-          </svg>
-          <span className="font-mono text-sm font-medium">DevOmkar</span>
+          <span className="font-mono text-xs sm:text-sm font-medium">&lt;/&gt; OmkarBhure</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -62,7 +53,7 @@ export function Header() {
         {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="text-foreground">
+            <Button variant="ghost" size="icon" className="text-foreground min-h-[44px] min-w-[44px] md:hidden">
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle menu</span>
             </Button>

@@ -29,21 +29,21 @@ const stack = [
 export default function About() {
   return (
     <Layout>
-      <section className="py-20">
-        <div className="container">
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container px-4 sm:px-6">
           {/* Page Header */}
           <div className="max-w-3xl mb-12 opacity-0 animate-fade-in-up">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               About
             </h1>
           </div>
 
-          <div className="grid gap-16 lg:grid-cols-3">
+          <div className="grid gap-8 sm:gap-10 lg:grid-cols-3 lg:gap-16">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-6">
               {/* Developer Photo */}
               <div className="mb-8 opacity-0 animate-fade-in-up stagger-1">
-                <div className="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-full">
+                <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 overflow-hidden rounded-full">
                   <img
                     src="/images/developer-portrait.jpeg"
                     alt="Developer portrait"
@@ -53,7 +53,7 @@ export default function About() {
               </div>
 
               <div className="opacity-0 animate-fade-in-up stagger-1">
-                <p className="text-lg text-foreground leading-relaxed">
+                <p className="text-base sm:text-lg text-foreground leading-relaxed">
                   I'm <span className="text-primary font-medium">Omkar</span>, a developer focused on building software that scales, performs, and lasts. I enjoy designing and developing reliable digital products that solve complex real-world problems and deliver meaningful impact.
                 </p>
               </div>
