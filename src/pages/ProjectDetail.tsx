@@ -62,6 +62,7 @@ const projectsData: Record<string, {
       "REST API architecture for streaming chat, PDF extraction, authentication, and authenticated user information",
     ],
     githubUrl: "https://github.com/Omkarbhure/SigmaGPT",
+    liveDemoUrl: "https://sigmagpt.antideploy.com/",
   },
   "tripnest-travel-planning-and-trip-management-platform": {
     name: "TripNest — Travel Planning & Trip Management Platform",
