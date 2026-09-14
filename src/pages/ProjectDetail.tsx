@@ -39,6 +39,30 @@ const projectsData: Record<string, {
     githubUrl: "https://github.com/Omkarbhure/Cinebook",
     liveDemoUrl: "https://cinebook-sigma.vercel.app/"
   },
+  "sigmagpt-multimodal-ai-chatbot-productivity-assistant": {
+    name: "SigmaGPT — Multimodal AI Chatbot & Productivity Assistant",
+    description: "A modern, full-stack AI chatbot inspired by ChatGPT, Claude, and DeepSeek, powered by the Google Gemini API. Provides real-time streaming conversations with multimodal support for text, images, PDFs, and voice input, combined with secure user authentication and persistent prompt history.",
+    fullDescription: "A modern, full-stack AI chatbot inspired by ChatGPT, Claude, and DeepSeek, powered by the Google Gemini API. SigmaGPT provides real-time streaming conversations with multimodal support for text, images, PDFs, and voice input, combined with secure JWT-based user authentication and persistent prompt history — delivering a complete, production-grade AI assistant experience.",
+    stack: ["Node.js", "Express", "Google Gemini API", "Vanilla JavaScript", "Web Speech API", "PDF-Parse", "Multer", "JWT", "bcrypt"],
+    impact: "Delivered a multimodal AI experience supporting real-time streaming conversations, image understanding, PDF analysis, voice-to-text input, and authenticated user sessions",
+    challenges: [
+      "Building low-latency streaming AI responses with a typing-effect experience while allowing users to stop and regenerate generations",
+      "Coordinating multimodal input across text, images, PDFs, and voice while converting each input into Gemini-compatible requests",
+      "Processing uploaded PDFs through server-side text extraction and passing relevant document content to the AI for contextual analysis",
+      "Implementing secure authentication with JWT-based sessions and bcrypt password hashing while protecting authenticated API endpoints",
+    ],
+    features: [
+      "Real-time Gemini-powered AI chat with streaming responses, stop generation, regeneration, and Markdown rendering",
+      "Multimodal AI interaction with image upload, preview, and AI-powered image analysis",
+      "PDF upload with automatic text extraction and document-based question answering",
+      "Real-time voice-to-text input using the browser Web Speech API",
+      "JWT-based authentication with registration, login, protected user sessions, and bcrypt password hashing",
+      "ChatGPT-style responsive interface with dark theme, animated gradients, welcome screen, quick suggestions, and recent prompt history",
+      "File upload handling with Multer, validation, and configurable 50MB file-size limits",
+      "REST API architecture for streaming chat, PDF extraction, authentication, and authenticated user information",
+    ],
+    githubUrl: "https://github.com/Omkarbhure/SigmaGPT",
+  },
   "tripnest-travel-planning-and-trip-management-platform": {
     name: "TripNest — Travel Planning & Trip Management Platform",
     description: "An interactive, full-stack travel platform built for individual travelers and collaborative group trips, combining live weather data, group budgeting, and real-time collaboration into a single luxury-travel-portal experience.",

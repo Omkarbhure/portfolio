@@ -17,6 +17,13 @@ const projects = [
     stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Spring Boot 4", "Java 17", "PostgreSQL", "Spring Security / JWT"],
     impact: "Aggregated dashboards across 25+ destinations, automated daily reminder scheduling, real-time budget-threshold alerting",
   },
+  {
+    name: "SigmaGPT — Multimodal AI Chatbot & Productivity Assistant",
+    slug: "sigmagpt-multimodal-ai-chatbot-productivity-assistant",
+    description: "A modern, full-stack AI chatbot inspired by ChatGPT, Claude, and DeepSeek, powered by the Google Gemini API. Provides real-time streaming conversations with multimodal support for text, images, PDFs, and voice input, combined with secure user authentication and persistent prompt history.",
+    stack: ["Node.js", "Express", "Google Gemini API", "Vanilla JavaScript", "Web Speech API", "PDF-Parse", "Multer", "JWT", "bcrypt"],
+    impact: "Delivered a multimodal AI experience supporting real-time streaming conversations, image understanding, PDF analysis, voice-to-text input, and authenticated user sessions",
+  },
 ];
 
 export default function Work() {
