@@ -53,19 +53,19 @@ export default function About() {
               </div>
 
               <div className="opacity-0 animate-fade-in-up stagger-1">
-                <p className="text-base sm:text-lg text-foreground leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed break-words">
                   I'm <span className="text-primary font-medium">Omkar</span>, a developer focused on building software that scales, performs, and lasts. I enjoy designing and developing reliable digital products that solve complex real-world problems and deliver meaningful impact.
                 </p>
               </div>
 
               <div className="opacity-0 animate-fade-in-up stagger-2">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed break-words">
                   I focus on creating systems that are practical, resilient, and built to grow with real user needs over time.
                 </p>
               </div>
 
               <div className="opacity-0 animate-fade-in-up stagger-3">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed break-words">
                   My approach blends engineering discipline with product thinking so every solution is both technically strong and genuinely valuable.
                 </p>
               </div>
@@ -74,7 +74,7 @@ export default function About() {
                 <CodeDivider label="Philosophy" />
               </div>
 
-              <div className="space-y-4 font-mono text-sm opacity-0 animate-fade-in-up stagger-4">
+              <div className="space-y-4 font-mono text-xs sm:text-sm opacity-0 animate-fade-in-up stagger-4 break-words">
                 <p className="text-muted-foreground transition-colors hover:text-foreground">
                   <span className="text-primary">{"//"}</span> Build for reliability, not just speed
                 </p>
@@ -97,7 +97,7 @@ export default function About() {
                 <h2 className="font-mono text-sm text-primary mb-4">
                   <span className="text-muted-foreground">/*</span> Stack <span className="text-muted-foreground">*/</span>
                 </h2>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {stack.map((tech) => (
                     <TechTag key={tech}>{tech}</TechTag>
                   ))}
@@ -109,7 +109,7 @@ export default function About() {
                 <h2 className="font-mono text-sm text-primary mb-4">
                   <span className="text-muted-foreground">/*</span> Experience <span className="text-muted-foreground">*/</span>
                 </h2>
-                <div className="space-y-3 text-sm text-muted-foreground">
+                <div className="space-y-3 text-xs sm:text-sm text-muted-foreground break-words">
                   <p>Infosys Springboard virtual Internship 7.0</p>
                 </div>
               </div>

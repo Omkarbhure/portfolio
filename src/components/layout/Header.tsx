@@ -58,7 +58,7 @@ export function Header() {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-72 bg-background border-border">
+          <SheetContent side="right" className="w-[80vw] max-w-xs sm:w-72 bg-background border-border">
             <div className="flex flex-col gap-6 mt-8">
               <div className="font-mono text-sm text-primary mb-4">
                 {"// Navigation"}

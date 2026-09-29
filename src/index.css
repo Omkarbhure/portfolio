@@ -152,19 +152,27 @@
   /* Technical grid pattern background */
   .bg-grid {
     background-image: 
-      linear-gradient(hsl(0 0% 18% / 0.5) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(0 0% 18% / 0.5) 1px, transparent 1px);
-    background-size: 50px 50px;
+      linear-gradient(hsl(0 0% 18% / 0.45) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 18% / 0.45) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 
-  /* Hover lift effect for cards */
+  @media (min-width: 640px) {
+    .bg-grid {
+      background-size: 48px 48px;
+    }
+  }
+
+  /* Hover lift effect for cards - only on pointer devices */
   .hover-lift {
     @apply transition-all duration-300 ease-out;
   }
 
-  .hover-lift:hover {
-    @apply -translate-y-1;
-    box-shadow: 0 10px 40px hsl(130 100% 50% / 0.1);
+  @media (hover: hover) and (pointer: fine) {
+    .hover-lift:hover {
+      @apply -translate-y-1;
+      box-shadow: 0 10px 40px hsl(130 100% 50% / 0.1);
+    }
   }
 
   /* Animated underline for links */
@@ -177,8 +185,10 @@
     @apply absolute bottom-0 left-0 w-0 h-px bg-primary transition-all duration-300;
   }
 
-  .link-underline:hover::after {
-    @apply w-full;
+  @media (hover: hover) and (pointer: fine) {
+    .link-underline:hover::after {
+      @apply w-full;
+    }
   }
 
   /* Staggered animation delays */
@@ -186,4 +196,15 @@
   .stagger-2 { animation-delay: 0.2s; }
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

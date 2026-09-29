@@ -16,6 +16,29 @@ const projectsData: Record<string, {
   githubUrl: string;
   liveDemoUrl?: string;
 }> = {
+  "repopilot-github-coderag-developer-intelligence-platform": {
+    name: "RepoPilot — GitHub CodeRAG: Developer Intelligence Platform",
+    description: "A full-stack Retrieval-Augmented Generation platform that ingests public GitHub repositories and turns them into a searchable, conversational code workspace. It performs AST-aware chunking and hybrid vector/keyword indexing, then powers a split-view Monaco editor where every answer is grounded in the repo and backed by line-level citations.",
+    fullDescription: "A full-stack Retrieval-Augmented Generation platform that ingests public GitHub repositories and turns them into a searchable, conversational code workspace. It performs AST-aware chunking and hybrid vector/keyword indexing, then powers a split-view Monaco editor where every answer is grounded in the repo and backed by line-level citations.",
+    stack: ["Next.js 14", "React 18", "TypeScript", "Java 17", "Spring Boot 3.3", "PostgreSQL 16", "Qdrant", "Google Gemini", "Docker"],
+    impact: "Hybrid dense + sparse retrieval with weighted score fusion (0.7 vector / 0.3 keyword), 77 automated backend tests, CI/CD via GitHub Actions",
+    challenges: [
+      "Combining Qdrant vector similarity and PostgreSQL full-text scores into a single ranking through normalized, weighted fusion",
+      "Keeping LLM answers grounded by forcing responses to cite retrieved chunks as [filePath:startLine-endLine]",
+      "Ingesting large repositories safely with 100MB/10MB size caps, Zip Slip protection, and filtering of binaries, minified code, and generated files",
+      "Running long indexing jobs asynchronously with live status tracking (Downloading → Scanning → Chunking → Embedding → Completed)",
+      "Securing dual authentication (email/password + GitHub OAuth2) with stateless HttpOnly JWT cookies, CSRF protection, rate limiting, and daily API quotas"
+    ],
+    features: [
+      "Hybrid search across 768-dimensional Gemini embeddings and PostgreSQL tsvector/GIN full-text indexes",
+      "Grounded RAG chat with clickable citation chips that jump to and highlight exact lines in the editor",
+      "Split-view workspace with a read-only Monaco editor, 20+ language detection, and a related-files drawer",
+      "Automated architecture overview generation, cached per commit SHA",
+      "Stack trace and bug investigation for Java, Python, JS/TS, and Go, with root-cause analysis and suggested fixes",
+      "Smart ingestion pipeline with thread-pooled background workers and low-value code detection to save embedding budget"
+    ],
+    githubUrl: "https://github.com/Omkarbhure/Github-CodeRag"
+  },
   "cinebook-online-movie-ticket-booking-platform": {
     name: "CineBook — Online Movie Ticket Booking Platform",
     description: "A full-stack movie ticket booking engine built end-to-end, covering everything from location-aware showtime discovery to atomic seat locking, digital wallet payments, and an administrative control center.",
@@ -128,24 +151,24 @@ export default function ProjectDetail() {
           </Link>
 
           {/* Project Header */}
-          <div className="mb-12 opacity-0 animate-fade-in-up stagger-1">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-8 sm:mb-12 opacity-0 animate-fade-in-up stagger-1">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4 break-words leading-tight">
               {project.name}
             </h1>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed mb-6 break-words">
               {project.fullDescription}
             </p>
             
             {/* Tech Stack */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6">
               {project.stack.map((tech) => (
                 <TechTag key={tech}>{tech}</TechTag>
               ))}
             </div>
 
             {/* Impact */}
-            <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg">
-              <span className="font-mono text-sm text-primary">
+            <div className="p-3.5 sm:p-4 bg-primary/5 border border-primary/20 rounded-lg break-words">
+              <span className="font-mono text-xs sm:text-sm text-primary break-words leading-normal">
                 <span className="text-muted-foreground">{"//"}</span> Impact: {project.impact}
               </span>
             </div>
@@ -156,12 +179,12 @@ export default function ProjectDetail() {
           </div>
 
           {/* Challenges */}
-          <div className="mb-12 opacity-0 animate-fade-in-up stagger-3">
+          <div className="mb-8 sm:mb-12 opacity-0 animate-fade-in-up stagger-3">
             <ul className="space-y-3">
               {project.challenges.map((challenge, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="font-mono text-primary mt-1">→</span>
-                  <span className="text-muted-foreground">{challenge}</span>
+                <li key={index} className="flex items-start gap-2.5 sm:gap-3">
+                  <span className="font-mono text-primary mt-1 shrink-0">→</span>
+                  <span className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed break-words">{challenge}</span>
                 </li>
               ))}
             </ul>
@@ -172,22 +195,22 @@ export default function ProjectDetail() {
           </div>
 
           {/* Features */}
-          <div className="mb-12 opacity-0 animate-fade-in-up stagger-4">
+          <div className="mb-8 sm:mb-12 opacity-0 animate-fade-in-up stagger-4">
             <ul className="space-y-3">
               {project.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="font-mono text-primary mt-1">✓</span>
-                  <span className="text-muted-foreground">{feature}</span>
+                <li key={index} className="flex items-start gap-2.5 sm:gap-3">
+                  <span className="font-mono text-primary mt-1 shrink-0">✓</span>
+                  <span className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed break-words">{feature}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap gap-3 sm:gap-4 pt-8 border-t border-border opacity-0 animate-fade-in-up stagger-4">
+          <div className="flex flex-col xs:flex-row flex-wrap gap-3 sm:gap-4 pt-8 border-t border-border opacity-0 animate-fade-in-up stagger-4">
             <Button
               variant="outline"
-              className="font-mono min-h-[44px]"
+              className="w-full xs:w-auto font-mono min-h-[44px]"
               asChild
             >
               <a
@@ -202,7 +225,7 @@ export default function ProjectDetail() {
             {project.liveDemoUrl ? (
               <Button
                 variant="outline"
-                className="font-mono min-h-[44px]"
+                className="w-full xs:w-auto font-mono min-h-[44px]"
                 asChild
               >
                 <a
@@ -215,7 +238,7 @@ export default function ProjectDetail() {
                 </a>
               </Button>
             ) : (
-              <Button variant="outline" className="font-mono" disabled>
+              <Button variant="outline" className="w-full xs:w-auto font-mono min-h-[44px]" disabled>
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Live Demo
               </Button>

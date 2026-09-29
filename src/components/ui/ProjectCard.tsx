@@ -22,28 +22,28 @@ export function ProjectCard({ name, description, stack, impact, slug, className 
         )}
       >
         {/* Project Name */}
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="font-mono text-base sm:text-lg font-medium text-foreground group-hover:text-primary transition-colors">
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <h3 className="font-mono text-base sm:text-lg font-medium text-foreground group-hover:text-primary transition-colors break-words">
             {name}
           </h3>
-          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+          <ArrowRight className="h-4 w-4 shrink-0 mt-1 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
         </div>
 
         {/* Description */}
-        <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+        <p className="text-xs sm:text-sm text-muted-foreground mb-4 leading-relaxed break-words">
           {description}
         </p>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
           {stack.map((tech) => (
             <TechTag key={tech}>{tech}</TechTag>
           ))}
         </div>
 
         {/* Impact */}
-        <div className="pt-4 border-t border-border">
-          <span className="font-mono text-xs text-primary">
+        <div className="pt-3 sm:pt-4 border-t border-border">
+          <span className="font-mono text-xs text-primary break-words leading-normal">
             <span className="text-muted-foreground">{"//"}</span> {impact}
           </span>
         </div>

@@ -4,6 +4,13 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 
 const projects = [
   {
+    name: "RepoPilot — GitHub CodeRAG: Developer Intelligence Platform",
+    slug: "repopilot-github-coderag-developer-intelligence-platform",
+    description: "A full-stack Retrieval-Augmented Generation platform that ingests public GitHub repositories and turns them into a searchable, conversational code workspace with AST-aware chunking, hybrid vector/keyword indexing, and a split-view Monaco editor with line-level citations.",
+    stack: ["Next.js 14", "React 18", "TypeScript", "Java 17", "Spring Boot 3.3", "PostgreSQL 16", "Qdrant", "Google Gemini", "Docker"],
+    impact: "Hybrid dense + sparse retrieval with weighted score fusion (0.7 vector / 0.3 keyword), 77 automated backend tests, CI/CD via GitHub Actions",
+  },
+  {
     name: "CineBook — Online Movie Ticket Booking Platform",
     slug: "cinebook-online-movie-ticket-booking-platform",
     description: "A full-stack movie ticket booking engine built end-to-end, covering everything from location-aware showtime discovery to atomic seat locking, digital wallet payments, and an administrative control center.",
